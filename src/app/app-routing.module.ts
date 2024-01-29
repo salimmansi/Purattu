@@ -6,6 +6,8 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { CreateMovieComponent } from './components/create-movie/create-movie.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { SectionTwoComponent } from './components/section-two/section-two.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 const routes: Routes = [
   // {path: '', component: LayoutComponent},
@@ -13,7 +15,9 @@ const routes: Routes = [
   {path: 'projects', component: MoviesListComponent},
   {path: 'blog', component: BlogsComponent},
   {path: 'createMovie', component: CreateMovieComponent},
-  {path: 'about', component: AboutUsComponent}
+  {path: 'about', component: AboutUsComponent},
+  {path: 'services', component: SectionTwoComponent},
+  {path: 'detail', component: MovieDetailsComponent}
 ];
 
 @NgModule({

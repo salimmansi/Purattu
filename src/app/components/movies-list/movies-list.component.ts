@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Movie } from '../../models/movie.model';
+declare var Flickity: any;
 
 @Component({
   selector: 'app-movies-list',
@@ -8,6 +9,9 @@ import { Movie } from '../../models/movie.model';
   styleUrl: './movies-list.component.scss'
 })
 export class MoviesListComponent implements OnInit{
+  activeButton: string ='';
+activeTab:string='Released';
+
   constructor() {}
   images = [
     {path: 'https://source.unsplash.com/800x600/?nature'},
@@ -21,8 +25,33 @@ export class MoviesListComponent implements OnInit{
   fetchedMoviesIsfetched: boolean = false;
   fileName: string= "";
   //#endregion Variables
+   
+
+
   ngOnInit(): void {
     this.getAllMovies();
+    this.initializeFlickity();
+
+  }
+  clicked(activeButton: string): void {
+    if (this.activeTab === activeButton) {
+      // If the same button is clicked again, deactivate it
+      this.activeTab = '';
+    } else {
+      this.activeTab = activeButton;
+    }
+  
+    console.log(this.activeTab);
+  }
+  initializeFlickity(): void {
+    const elem = document.querySelector('.carousel');
+    const flkty = new Flickity(elem, {
+      cellalign: 'right',
+      pageDots: false,
+      groupCells: '20%',
+      selectedAttraction: 0.03,
+      friction: 0.15
+    });
   }
   getAllMovies() {
     this._movieService.getAllMovies().subscribe(

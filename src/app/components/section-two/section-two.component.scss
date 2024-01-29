@@ -2,7 +2,11 @@
     background: #FBAB00;
   
 }
-
+section {
+    background: #FBAB00;
+width: 100%;
+height: 87vh;
+}
   .hero {
     display: flex;
     flex-direction: row;
@@ -85,10 +89,11 @@ line-height: normal;
   .about-content{
     color: #032B43;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 175%; /* 42px */
+ margin-bottom: 10px;
   }
   .page-wrapper{
     background: #FBAB00;
@@ -98,12 +103,16 @@ line-height: normal;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
-    padding: 0 80px;
+    justify-content: flex-start;
+    padding: 0 10px;
   }
   .right-container{
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    transform: rotate(339deg);
+   
+
+
     .imgabout1{
         height: 55%;
     }
@@ -188,48 +197,41 @@ background: linear-gradient(180deg, #032B43 0%, rgba(3, 43, 67, 0.61) 50.84%, rg
   }
   .bg-style{
    
-    background:  #032B43 ;
+    background: linear-gradient(180deg, #032B43 0%, rgba(3, 43, 67, 0.61) 50.84%, rgba(3, 43, 67, 0.00) 97.55%, rgba(3, 43, 67, 0.00) 210.8%);
   }
-  .cards-style{
-    height: 20rem;
+  .text-gray-600.body-font.header-display.bg-yellow.ff {
+    position: relative;
+    z-index: 2; /* Set a higher z-index for the header */
   }
-  .cont-style{
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 275px;
+    z-index: 1; /* Set a lower z-index for the carousel container */
+  }
+  
+  .carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
+    transition: transform 1s;
+    will-change: transform;
+    width: 100%;
+    z-index: 1; /* Set a lower z-index for the carousel */
   }
-  .button-wrapper{
-    display: inline-flex;
-padding: 6px 4px;
-align-items: center;
-gap: 6px;
-border-radius: 10px;
-background: #032B43;
-  }
-  .btn-movie{
-    border-radius: 10px;
+  
+  .carousel-item {
     display: flex;
-    padding: 6px 24px;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
-    color: #FBAB00;
-    font-family: Roboto;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
- 
-  }
-  button.btn-movie:active{
-    background-color: #FBAB00 ;
-    color: white;
-  }
-  .img-wrapss{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    width: 100%;
+    height: 275px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 15px;
   }

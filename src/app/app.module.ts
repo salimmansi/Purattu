@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MovieService } from './services/movie.service';
+import { SectionTwoComponent } from './components/section-two/section-two.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MovieService } from './services/movie.service';
     MoviesListComponent,
     MovieDetailsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SectionTwoComponent
   ],
   imports: [
     RouterLink,
